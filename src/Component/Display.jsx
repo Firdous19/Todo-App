@@ -24,7 +24,9 @@ function Display()
     width : "50%",
     paddingTop : "2rem",
     alignItems : "center",
-   height : "100vh"}}>
+    height : "100vh",
+    overflow : "auto"
+   }}>
   <h2 style={{fontFamily : "Poppins"}}>Your TODOS</h2>
 
   {  todoCon.map((item)=>

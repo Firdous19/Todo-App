@@ -6,7 +6,7 @@ function Input()
    const descriptionRef = useRef(null);
    const {setTodoCon,todoCon} = useContext(TodoContext);
    return (
-    <div className="input" style={{display : "flex", gap : "1rem", flexDirection:"column",width : "50%",justifyContent : "center",alignItems : "center",backgroundColor : "#D04848"}}>   
+    <div className="input" style={{display : "flex", gap : "1rem", flexDirection:"column",width : "50%",justifyContent : "center",alignItems : "center",backgroundColor : "#FF6868"}}>   
     <h2 style={{fontFamily : "Poppins"}}>Add TODO</h2> 
     <input style={{
        width : "50%",
