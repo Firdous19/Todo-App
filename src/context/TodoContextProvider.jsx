@@ -1,5 +1,5 @@
 import React from "react";
-import TodoContext from "./todoContext";
+import TodoContext from "./TodoContext";
 
 const TodoContextProvider = ({children})=>
     {

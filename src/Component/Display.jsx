@@ -32,7 +32,9 @@ function Display()
     paddingTop : "2rem",
     alignItems : "center",
     height : "100vh",
-    overflow : "auto"
+    overflow : "auto",
+    paddingBottom : "50px",
+    
    }}>
   <h2 style={{fontFamily : "Poppins"}}>Your TODOS</h2>
 
