@@ -2,16 +2,23 @@ import React,{useState,useEffect,useContext} from "react";
 import TodoContext from "../context/TodoContext";
 function Display()
 {
-  const [color,setColor]=useState("white");
-  const [check,setCheck]=useState(false);
+  let ind; 
+  let [color,setColor]=useState([]);
+  const [check,setCheck]=useState([false]);
   const {todoCon}=useContext(TodoContext);
   const {setTodoCon}=useContext(TodoContext);
-  useEffect(()=>{
-    if(check)
-    setColor("#B7E5B4");
-    else 
-    setColor("white");  
+  useEffect(()=>
+  {
+    setColor(check.map((item)=>
+    {
+      if(item)
+      return "#D4E7C5";
+      else 
+      return "white";
+    }));
+    console.log(check);
   },[check]);
+   
   
   if(todoCon.length)
   {return(
@@ -29,15 +36,21 @@ function Display()
    }}>
   <h2 style={{fontFamily : "Poppins"}}>Your TODOS</h2>
 
-  {  todoCon.map((item)=>
+  {  todoCon.map((item,i)=>
   (
-    <div key={item.todoTitle} style = {{width : "90%", backgroundColor : color, padding : "1rem", borderRadius : "10px", position :"relative" }}>
+
+    <div key={i} style = {{width : "90%", backgroundColor : color[i] || "white", padding : "1rem", borderRadius : "10px", position :"relative" }}>
+      
     <h2 style={{marginBottom : "1rem"}}>{item.todoTitle}</h2>
     <p style={{marginBottom : "1rem"}}>{item.todoDescription}</p>
     <p style={{display : "inline", marginRight : "1.5rem"}}>Completed</p>
-    <input style={{width : "20px",height : "20px", position : "absolute", bottom : "15px"}} type="checkbox" onClick={()=>
+    <input style={{width : "20px",height : "20px", position : "absolute", bottom : "15px"}} type="checkbox" onChange={()=>
     {
-       setCheck((prev)=>(!prev));
+       setCheck((prev)=>{
+        const newCheck = [...prev];
+        newCheck[i]=!newCheck[i];
+        return newCheck;
+       });
     }} />
 </div> 
   ))
