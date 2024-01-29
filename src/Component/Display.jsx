@@ -7,6 +7,7 @@ function Display()
   const [check,setCheck]=useState([false]);
   const {todoCon}=useContext(TodoContext);
   const {setTodoCon}=useContext(TodoContext);
+  // Changes the color array based on the values of the check array
   useEffect(()=>
   {
     setColor(check.map((item)=>
@@ -19,7 +20,7 @@ function Display()
     console.log(check);
   },[check]);
    
-  
+  // If there is at least a single todo in the todoCon array
   if(todoCon.length)
   {return(
   <div className="display" 

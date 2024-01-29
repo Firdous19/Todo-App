@@ -1,4 +1,3 @@
-import Screen from "./Component/Screen"
 import Input from "./Component/Input"
 import Display from "./Component/Display"
 import TodoContextProvider from "./context/TodoContextProvider"
